@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Manager</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link your CSS file -->
+    <style>
+        body {
+            background-image: url('background.jpg'); 
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            margin: 0; 
+            padding: 0;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <h1>Password Manager</h1>
+    
+    <!-- Form for entering website, username, and password -->
+    <form id="passwordForm">
+        <label for="website">Website:</label>
+        <input type="text" id="website" name="website">
+        <br>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br>
+        <button type="submit" class="btn">Save Password</button>
+    </form>
+
+    <!-- Alert message for password copied to clipboard -->
+    <div id="alert" style="display: none;">Password copied to clipboard</div>
+
+    <!-- Table to display stored passwords -->
+    <table id="passwordTable">
+        <tr>
+            <th>Website</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th id="btn-delete">Delete</th>
+            <!-- <td><button class="btn-delete" onclick="deletePassword('${element.website}')">Delete</button></td> -->
+        </tr>
+    </table>
+    
+     <!-- Add a button or link to navigate to the registration page -->
+     <div class="container">
+        <button onclick="openRegistrationPage()" class="btn">Register</button>
+    </div>
+
+    <!-- Include the Crypto.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+    <!-- Include the JavaScript file -->
+    <script src="passwordManager.js"></script> <!-- Link your JavaScript file -->
+
+    
+    <!-- SVG image for copying text to clipboard -->
+    <img id="copyImage" src="./copy.svg" alt="Copy Button" width="10" height="10" style="display: none;">
+
+
+</body>
+</html>
